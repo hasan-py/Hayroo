@@ -28,6 +28,7 @@ class Auth {
   async postSignup(req, res) {
     let { name, email, password, cPassword } = req.body;
     let error = {};
+     
     if (!name || !email || !password || !cPassword) {
       error = {
         ...error,
