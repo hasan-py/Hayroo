@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  backend:
+   build: ./server/
+   container-name: backend-container
+   ports:
+    -"4000:8000"
+  volumes:
+
+    - ./server:/app/backend/
+    - /app/backend/node_modules
+  depends_on:
+     - db
+
+  db:
+    image: mongo
+    container_name: database_container
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/mern
+      
+
+      
+    volumes:
+     - mongo-data:/data/db
+
+    
