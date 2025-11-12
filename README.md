@@ -20,6 +20,29 @@ BRAINTREE_PUBLIC_KEY=your_public_key
 BRAINTREE_PRIVATE_KEY=your_private_key
 ```
 
+### 🔑 Getting Braintree API Keys
+
+To enable payment functionality, you need to configure your own Braintree API credentials.
+
+#### Steps to get your Braintree API keys
+
+1. Go to the official Braintree website: [https://www.braintreepayments.com/](https://www.braintreepayments.com/)
+2. Create a **free Sandbox account** at [https://sandbox.braintreegateway.com/](https://sandbox.braintreegateway.com/)
+3. After logging in, navigate to:  
+   **Account → Settings → API → API Keys**
+4. Click **“Generate New API Key”** if none exists.
+5. Copy your credentials:
+   - **Merchant ID**
+   - **Public Key**
+   - **Private Key**
+6. Add them to your `.env` file (inside the `server` folder):
+
+   ```bash
+   BRAINTREE_MERCHANT_ID=your_merchant_id_here
+   BRAINTREE_PUBLIC_KEY=your_public_key_here
+   BRAINTREE_PRIVATE_KEY=your_private_key_here
+   ```
+
 ### Installing
 
 Installing NPM modules on both client and server folders
