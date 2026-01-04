@@ -5,6 +5,7 @@ import "./style.css";
 import { logout } from "./Action";
 import { LayoutContext } from "../index";
 import { isAdmin } from "../auth/fetchApi";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Navber = (props) => {
   const history = useHistory();
@@ -30,23 +31,23 @@ const Navber = (props) => {
   return (
     <Fragment>
       {/* Navber Section */}
-      <nav className="fixed top-0 w-full z-20 shadow-lg lg:shadow-none bg-white">
+      <nav className="fixed top-0 w-full z-20 shadow-lg lg:shadow-none bg-white dark:bg-gray-800">
         <div className="m-4 md:mx-12 md:my-6 grid grid-cols-4 lg:grid-cols-3">
-          <div className="hidden lg:block col-span-1 flex text-gray-600 mt-1">
+          <div className="hidden lg:block col-span-1 flex text-gray-600 dark:text-gray-300 mt-1">
             <span
-              className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
+              className="hover:bg-gray-200 dark:hover:bg-gray-700 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 dark:hover:text-white cursor-pointer"
               onClick={(e) => history.push("/")}
             >
               Shop
             </span>
             <span
-              className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
+              className="hover:bg-gray-200 dark:hover:bg-gray-700 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 dark:hover:text-white cursor-pointer"
               onClick={(e) => history.push("/blog")}
             >
               Blog
             </span>
             <span
-              className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
+              className="hover:bg-gray-200 dark:hover:bg-gray-700 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 dark:hover:text-white cursor-pointer"
               onClick={(e) => history.push("/contact-us")}
             >
               Contact us
@@ -71,7 +72,7 @@ const Navber = (props) => {
             <span
               onClick={(e) => history.push("/")}
               style={{ letterSpacing: "0.10rem" }}
-              className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
+              className="flex items-left text-center font-bold uppercase text-gray-800 dark:text-white text-2xl cursor-pointer px-2 text-center"
             >
               Hayroo
             </span>
@@ -79,15 +80,17 @@ const Navber = (props) => {
           <div
             onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.70rem" }}
-            className="hidden lg:block flex items-left col-span-1 text-center text-gray-800 font-bold tracking-widest uppercase text-2xl cursor-pointer"
+            className="hidden lg:block flex items-left col-span-1 text-center text-gray-800 dark:text-white font-bold tracking-widest uppercase text-2xl cursor-pointer"
           >
             Hayroo
           </div>
           <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
+            {/* Dark Mode Toggle Button */}
+            <DarkModeToggle />
             {/*  WishList Page Button */}
             <div
               onClick={(e) => history.push("/wish-list")}
-              className="hover:bg-gray-200 rounded-lg px-2 py-2 cursor-pointer"
+              className="hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg px-2 py-2 cursor-pointer"
               title="Wishlist"
             >
               <svg
