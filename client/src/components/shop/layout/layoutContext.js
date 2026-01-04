@@ -1,3 +1,16 @@
+// Get dark mode preference from localStorage or default to false
+const getDarkModePreference = () => {
+  try {
+    const savedTheme = localStorage.getItem("darkMode");
+    if (savedTheme !== null) {
+      return JSON.parse(savedTheme);
+    }
+  } catch (e) {
+    console.error("Error reading darkMode from localStorage:", e);
+  }
+  return false;
+};
+
 export const layoutState = {
   navberHamburger: false,
   loginSignupModal: false,
@@ -9,6 +22,7 @@ export const layoutState = {
   cartTotalCost: null,
   orderSuccess: false,
   loading: false,
+  darkMode: getDarkModePreference(),
 };
 
 export const layoutReducer = (state, action) => {
@@ -62,6 +76,18 @@ export const layoutReducer = (state, action) => {
       return {
         ...state,
         loading: action.payload,
+      };
+    case "toggleDarkMode":
+      const newDarkMode = !state.darkMode;
+      // Persist to localStorage
+      try {
+        localStorage.setItem("darkMode", JSON.stringify(newDarkMode));
+      } catch (e) {
+        console.error("Error saving darkMode to localStorage:", e);
+      }
+      return {
+        ...state,
+        darkMode: newDarkMode,
       };
     default:
       return state;

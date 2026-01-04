@@ -1,0 +1,156 @@
+/* Dark Mode Styles - Applied when .dark class is present on html or body */
+
+/* Root background - apply to html and body when dark class is present */
+html.dark,
+html[data-theme="dark"],
+html.dark body,
+body.dark,
+html[data-theme="dark"] body {
+  background-color: #111827 !important;
+  color: #e5e7eb !important;
+}
+
+/* Apply dark background to root div */
+html.dark #root,
+html[data-theme="dark"] #root,
+body.dark #root {
+  background-color: #111827 !important;
+}
+
+/* Navbar backgrounds - target nav with bg-white class */
+html.dark nav,
+html[data-theme="dark"] nav,
+body.dark nav {
+  background-color: #1f2937 !important;
+}
+
+html.dark nav.bg-white,
+html[data-theme="dark"] nav.bg-white,
+body.dark nav.bg-white {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* Text colors - override Tailwind text colors */
+html.dark .text-gray-800,
+html[data-theme="dark"] .text-gray-800,
+body.dark .text-gray-800 {
+  color: #f3f4f6 !important;
+}
+
+html.dark .text-gray-700,
+html[data-theme="dark"] .text-gray-700,
+body.dark .text-gray-700 {
+  color: #e5e7eb !important;
+}
+
+html.dark .text-gray-600,
+html[data-theme="dark"] .text-gray-600,
+body.dark .text-gray-600 {
+  color: #d1d5db !important;
+}
+
+/* Background colors - override Tailwind bg colors */
+html.dark .bg-white,
+html[data-theme="dark"] .bg-white,
+body.dark .bg-white {
+  background-color: #1f2937 !important;
+}
+
+html.dark .bg-gray-100,
+html[data-theme="dark"] .bg-gray-100,
+body.dark .bg-gray-100 {
+  background-color: #374151 !important;
+}
+
+html.dark .bg-gray-200,
+html[data-theme="dark"] .bg-gray-200,
+body.dark .bg-gray-200 {
+  background-color: #4b5563 !important;
+}
+
+/* Hover states - target elements with hover classes */
+html.dark [class*="hover:bg-gray-200"]:hover,
+html[data-theme="dark"] [class*="hover:bg-gray-200"]:hover,
+body.dark [class*="hover:bg-gray-200"]:hover {
+  background-color: #4b5563 !important;
+}
+
+html.dark [class*="hover:bg-gray-700"]:hover,
+html[data-theme="dark"] [class*="hover:bg-gray-700"]:hover,
+body.dark [class*="hover:bg-gray-700"]:hover {
+  background-color: #4b5563 !important;
+}
+
+html.dark [class*="hover:text-gray-800"]:hover,
+html[data-theme="dark"] [class*="hover:text-gray-800"]:hover,
+body.dark [class*="hover:text-gray-800"]:hover {
+  color: #f9fafb !important;
+}
+
+html.dark [class*="hover:text-white"]:hover,
+html[data-theme="dark"] [class*="hover:text-white"]:hover,
+body.dark [class*="hover:text-white"]:hover {
+  color: #ffffff !important;
+}
+
+/* Dropdown menus */
+html.dark .userDropdown,
+html[data-theme="dark"] .userDropdown,
+body.dark .userDropdown {
+  background-color: #374151 !important;
+}
+
+html.dark .userDropdown li,
+html.dark .userDropdown span,
+html[data-theme="dark"] .userDropdown li,
+html[data-theme="dark"] .userDropdown span,
+body.dark .userDropdown li,
+body.dark .userDropdown span {
+  color: #e5e7eb !important;
+}
+
+html.dark .userDropdown [class*="hover:bg-gray-400"]:hover,
+html[data-theme="dark"] .userDropdown [class*="hover:bg-gray-400"]:hover,
+body.dark .userDropdown [class*="hover:bg-gray-400"]:hover {
+  background-color: #4b5563 !important;
+}
+
+/* Input and form elements */
+html.dark input,
+html.dark textarea,
+html.dark select,
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select,
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background-color: #374151 !important;
+  color: #e5e7eb !important;
+  border-color: #4b5563 !important;
+}
+
+/* Shadows */
+html.dark .shadow-lg,
+html.dark .shadow-md,
+html[data-theme="dark"] .shadow-lg,
+html[data-theme="dark"] .shadow-md,
+body.dark .shadow-lg,
+body.dark .shadow-md {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* SVG icons */
+html.dark svg.text-gray-600,
+html[data-theme="dark"] svg.text-gray-600,
+body.dark svg.text-gray-600 {
+  color: #d1d5db !important;
+}
+
+/* Yellow badges */
+html.dark [class*="bg-yellow"],
+html[data-theme="dark"] [class*="bg-yellow"],
+body.dark [class*="bg-yellow"] {
+  background-color: #92400e !important;
+}
