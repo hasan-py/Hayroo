@@ -9,16 +9,17 @@ class Product {
       path.resolve(__dirname + "../../") + "/public/uploads/products/";
     console.log(basePath);
     for (var i = 0; i < images.length; i++) {
-      let filePath = "";
-      if (mode == "file") {
-        filePath = basePath + `${images[i].filename}`;
-      } else {
-        filePath = basePath + `${images[i]}`;
-      }
-      console.log(filePath);
-      if (fs.existsSync(filePath)) {
-        console.log("Exists image");
-      }
+    let rawName = mode == "file" ? images[i].filename : images[i];
+
+       // Security fix: sanitize filename to prevent path traversal
+     let safeFileName = path.basename(rawName); 
+     let filePath = path.join(basePath, safeFileName);
+
+    if(!filePath.startsWith(basePath)){
+      console.log("Block path traversal attempt" , rawName)
+      continue;
+    }
+
       fs.unlink(filePath, (err) => {
         if (err) {
           return err;
