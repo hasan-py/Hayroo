@@ -38,6 +38,16 @@ class Auth {
       };
       return res.json({ error });
     }
+
+    // Check if password and confirm password are the same
+    if (password !== cPassword) {
+      error = {
+        ...error,
+        cPassword: "Passwords do not match"
+      };
+      return res.json({ error });
+    }
+
     if (name.length < 3 || name.length > 25) {
       error = { ...error, name: "Name must be 3-25 charecter" };
       return res.json({ error });
